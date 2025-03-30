@@ -1,0 +1,52 @@
+// Цвета для светлой темы
+$light-theme: (
+  "bg-primary": #ffffff,
+  "bg-secondary": #f9f9f9,
+  "text-primary": #333333,
+  "text-secondary": #666666,
+  "border": #cccccc,
+  "primary": #4caf50,
+  "primary-hover": #45a049,
+  "danger": #ff4444,
+  "danger-hover": #cc0000,
+  "shadow": rgba(0, 0, 0, 0.1),
+);
+
+// Цвета для темной темы
+$dark-theme: (
+  "bg-primary": #1a1a1a,
+  "bg-secondary": #2d2d2d,
+  "text-primary": #ffffff,
+  "text-secondary": #b3b3b3,
+  "border": #404040,
+  "primary": #4caf50,
+  "primary-hover": #45a049,
+  "danger": #ff4444,
+  "danger-hover": #cc0000,
+  "shadow": rgba(0, 0, 0, 0.3),
+);
+
+// Размеры
+$spacing-xs: 6px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-xxl: 30px;
+
+// Размеры шрифтов
+$font-size-base: 16px;
+
+// Скругления
+$border-radius: 4px;
+
+// Тени
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+// Максимальная ширина контейнера
+$container-max-width: 600px;
+
+// Функция для получения цвета из темы
+@function get-theme-color($theme, $color) {
+  @return map-get($theme, $color);
+}

@@ -1,0 +1,29 @@
+@import "./variables";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-base {
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: $font-size-base;
+  transition: background-color 0.2s ease;
+}
+
+@mixin input-base {
+  padding: $spacing-sm;
+  font-size: $font-size-base;
+  border: 1px solid;
+  border-radius: $border-radius;
+  width: 100%;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
+}

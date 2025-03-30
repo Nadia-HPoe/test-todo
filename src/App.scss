@@ -1,0 +1,35 @@
+@import "./styles/variables";
+
+.app {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-xl;
+  min-height: 100vh;
+  background-color: get-theme-color($light-theme, "bg-primary");
+  color: get-theme-color($light-theme, "text-primary");
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-xxl;
+  }
+
+  h1 {
+    text-align: center;
+    color: get-theme-color($light-theme, "text-primary");
+    margin: 0;
+  }
+}
+
+[data-theme="dark"] {
+  .app {
+    background-color: get-theme-color($dark-theme, "bg-primary");
+    color: get-theme-color($dark-theme, "text-primary");
+
+    h1 {
+      color: get-theme-color($dark-theme, "text-primary");
+    }
+  }
+}

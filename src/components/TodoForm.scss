@@ -1,0 +1,60 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.todo-form {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xl;
+
+  input {
+    @include input-base;
+    flex: 1;
+    background-color: get-theme-color($light-theme, "bg-primary");
+    color: get-theme-color($light-theme, "text-primary");
+    border-color: get-theme-color($light-theme, "border");
+
+    &::placeholder {
+      color: get-theme-color($light-theme, "text-secondary");
+    }
+
+    &:focus {
+      border-color: get-theme-color($light-theme, "primary");
+    }
+  }
+
+  button {
+    @include button-base;
+    background-color: get-theme-color($light-theme, "primary");
+    color: white;
+
+    &:hover {
+      background-color: get-theme-color($light-theme, "primary-hover");
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .todo-form {
+    input {
+      background-color: get-theme-color($dark-theme, "bg-primary");
+      color: get-theme-color($dark-theme, "text-primary");
+      border-color: get-theme-color($dark-theme, "border");
+
+      &::placeholder {
+        color: get-theme-color($dark-theme, "text-secondary");
+      }
+
+      &:focus {
+        border-color: get-theme-color($dark-theme, "primary");
+      }
+    }
+
+    button {
+      background-color: get-theme-color($dark-theme, "primary");
+
+      &:hover {
+        background-color: get-theme-color($dark-theme, "primary-hover");
+      }
+    }
+  }
+}

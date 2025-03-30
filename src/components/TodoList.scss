@@ -1,0 +1,96 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .todo-item {
+    @include flex-center;
+    justify-content: space-between;
+    padding: $spacing-md;
+    margin-bottom: $spacing-sm;
+    background-color: get-theme-color($light-theme, "bg-secondary");
+    border-radius: $border-radius;
+    box-shadow: 0 1px 3px get-theme-color($light-theme, "shadow");
+
+    .todo-content {
+      @include flex-center;
+      gap: $spacing-sm;
+      flex: 1;
+
+      .todo-checkbox {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .todo-text {
+        font-size: $font-size-base;
+        color: get-theme-color($light-theme, "text-primary");
+
+        &.completed {
+          text-decoration: line-through;
+          color: get-theme-color($light-theme, "text-secondary");
+        }
+      }
+    }
+
+    .delete-button {
+      @include flex-center;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: none;
+      background: none;
+      border-radius: 50%;
+      cursor: pointer;
+      color: get-theme-color($light-theme, "danger");
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: rgba(get-theme-color($light-theme, "danger"), 0.1);
+        color: get-theme-color($light-theme, "danger-hover");
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(get-theme-color($light-theme, "danger"), 0.2);
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .todo-list {
+    .todo-item {
+      background-color: get-theme-color($dark-theme, "bg-secondary");
+      box-shadow: 0 1px 3px get-theme-color($dark-theme, "shadow");
+
+      .todo-content {
+        .todo-text {
+          color: get-theme-color($dark-theme, "text-primary");
+
+          &.completed {
+            color: get-theme-color($dark-theme, "text-secondary");
+          }
+        }
+      }
+
+      .delete-button {
+        color: get-theme-color($dark-theme, "danger");
+
+        &:hover {
+          background-color: rgba(get-theme-color($dark-theme, "danger"), 0.1);
+          color: get-theme-color($dark-theme, "danger-hover");
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 2px
+            rgba(get-theme-color($dark-theme, "danger"), 0.2);
+        }
+      }
+    }
+  }
+}
